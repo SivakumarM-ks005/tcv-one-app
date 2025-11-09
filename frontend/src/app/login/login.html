@@ -1,0 +1,29 @@
+<mat-card>
+    <mat-card-header>
+        <h2 class="mb-0 text-center">TCV</h2>
+    </mat-card-header>
+    <mat-card-content>
+        <form>
+            <h4 class="card-title">Login</h4>
+            <mat-form-field appearance="outline" floatLabel="always">
+                <mat-label>User Name</mat-label>
+                <input matInput placeholder="Placeholder">
+            </mat-form-field>
+            <mat-form-field appearance="outline" floatLabel="always">
+                <mat-label>Password</mat-label>
+                <input matInput [type]="hide() ? 'password' : 'text'" />
+                <button matIconButton matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide()">
+                    <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+        
+            <button mat-raised-button color="primary" [routerLink]="['/layout']">Login</button>
+        </form>
+    </mat-card-content>
+</mat-card>
+
+<footer>
+    Copyright © {{year}}
+    <a href="#" rel="" target="_blank" title="Retrogemu">Retrogemu</a>
+</footer>

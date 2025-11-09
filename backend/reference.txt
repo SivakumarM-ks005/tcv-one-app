@@ -1,0 +1,68 @@
+
+A Guide to Designing a User and Role Management Module
+https://www.linkedin.com/pulse/database-structure-user-role-management-aj-february/
+1. The Users Table
+The primary repository for individual user details:
+
+UserID: A unique identifier for each user (Primary Key).
+Username: The chosen username.
+Password: This should always be hashed and salted, never stored in plain text for security reasons.
+Email: User's email address.
+FirstName & LastName: Personal details.
+DateRegistered: When the user first joined.
+LastLogin: The last date and time the user accessed the platform.
+IsActive (or Status): Indicates whether the user is active.
+
+2. Roles Table
+A categorization mechanism for users, granting levels of access:
+
+RoleID: A unique identifier for each role (Primary Key).
+RoleName: Name of the role.
+Description: A brief about the role’s functionalities.
+
+3. User-Roles Association
+Mapping users to their respective roles:
+
+UserRoleID: A unique identifier for each user-role combination (Primary Key).
+UserID: Refers to the Users table.
+RoleID: Refers to the Roles table.
+
+4. Permissions Table
+Detailing specific functionalities within the system:
+
+PermissionID: A unique identifier for each permission (Primary Key).
+PermissionName: The name of the specific permission.
+Description: Explains the permission's functionality.
+
+5. Role-Permissions Association
+Links roles with their relevant permissions:
+
+RolePermissionID: A unique identifier for each role-permission pairing (Primary Key).
+RoleID: Refers to the Roles table.
+PermissionID: Refers to the Permissions table.
+
+6. Audit Logs
+A highly recommended table that monitors and captures user activities:
+
+LogID: A unique identifier for each log (Primary Key).
+UserID: Refers to the Users table.
+ActivityType: Type of activity, e.g., 'Role Assignment', 'Permission Change'.
+Timestamp: When the activity occurred.
+Description: Detailed record of the activity.
+
+7. Password Reset Tokens
+For systems with a password reset function:
+
+TokenID: Unique identifier for each token (Primary Key).
+UserID: Refers to the Users table.
+TokenValue: The actual token sent to user emails.
+ExpiryDate: Token's expiration time.
+
+8. Two-Factor Authentication
+An optional table for enhanced security:
+
+UserID: Refers to the Users table.
+Method: How the second authentication step is carried out, e.g., SMS, Authenticator App.
+VerificationCode: The actual verification code.
+ExpiryDate: When the code becomes invalid.
+

@@ -1,1 +1,84 @@
+@use '@angular/material' as mat;
+
+html {
+  color-scheme: light dark;
+  @include mat.theme((color: (primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    ));
+  @include mat.card-overrides((elevated-container-color: rgb(222, 233, 253),
+      elevated-container-shape: 32px,
+      title-text-size: 2rem,
+
+    ));
+}
+
+body {
+  // Default the application to a light color theme. This can be changed to
+  // `dark` to enable the dark color theme, or to `light dark` to defer to the
+  // user's system settings.
+  color-scheme: light;
+
+  // Set a default background, font and text colors for the application using
+  // Angular Material's system-level CSS variables. Learn more about these
+  // variables at https://material.angular.dev/guide/system-variables
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+  // Reset the user agent margin.
+  margin: 0;
+}
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+:root {
+  --white: #fff;
+}
+
+.mat-mdc-text-field-wrapper {
+  background-color: var(--white);
+
+  .mat-mdc-form-field-flex {
+    .mat-mdc-floating-label {
+      top: calc((56px /2) - 10px) !important;
+    }
+  }
+
+  .mat-mdc-form-field-infix {
+    .mat-mdc-floating-label {
+      top: calc((56px /3) - 10px) !important;
+    }
+
+    width: 100% !important;
+    min-height: calc(56px - 20px) !important;
+  }
+
+ 
+}
+
+
+ .mdc-text-field--outlined {
+  padding-left: 8px !important;
+   padding-right: 8px !important;
+  .mat-mdc-form-field-infix {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+ }
+.mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__notch {
+  border-top: 1px solid red !important;
+}

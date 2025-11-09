@@ -1,0 +1,28 @@
+//https://dev.to/demg_dev/angular-181-create-a-simple-login-using-angular-material-437k
+
+mat-card {
+    max-width: 400px;
+    margin: 2em auto;
+    text-align: center;
+}
+
+mat-form-field {
+    display: block;
+}
+
+.card-title {
+    color: #646464;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+footer {
+    width: 100%;
+    font-size: .9em;
+    color: darkgray;
+    text-align: center;
+}
