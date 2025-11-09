@@ -3,6 +3,7 @@ const cors = require('cors');
 const connection = require('./connection');
 const app = express();
 
+// call functions
 
 app.use(cors());
 app.use(express.urlencoded({extended: true}));

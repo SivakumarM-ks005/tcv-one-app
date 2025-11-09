@@ -32,7 +32,7 @@ Detailing specific functionalities within the system:
 
 PermissionID: A unique identifier for each permission (Primary Key).
 PermissionName: The name of the specific permission.
-Description: Explains the permission's functionality.
+Description: Explains the permission's functionality. for test
 
 5. Role-Permissions Association
 Links roles with their relevant permissions:

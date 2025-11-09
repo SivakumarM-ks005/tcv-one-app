@@ -1,3 +1,4 @@
+-- user table
 create table user (
     userId int primary key AUTO_INCREMENT,
     userName varchar(250),
